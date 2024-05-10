@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "334527493596",
+    "project_id": "gossy-8c56c",
+    "storage_bucket": "gossy-8c56c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:334527493596:android:8f5a416da3d83a4d2e4b19",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4qPb_s5CeQuKBrSG13xNBu9tclf4EJSU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
