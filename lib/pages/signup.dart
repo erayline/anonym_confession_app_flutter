@@ -21,6 +21,7 @@ class _SignUpState extends State<SignUpPage> {
 
     Future<void> signUp() async {
       showDialog(context: (context), builder: (context) => const  Center(child: CircularProgressIndicator(),));
+      if(emailTextController.text.endsWith("edu.tr")){
 
       try{
         await FirebaseAuth.instance.createUserWithEmailAndPassword(email: emailTextController.text, password: passwordTextController.text);
@@ -31,6 +32,11 @@ class _SignUpState extends State<SignUpPage> {
           sonuc = e.code;
         });
       }
+      }
+        Navigator.pop(context);
+        setState(() {
+          sonuc="okul e postanizi girin";
+        });
 
     }
 
@@ -80,7 +86,7 @@ class _SignUpState extends State<SignUpPage> {
                 SizedBox(
                   height: 10,
                 ),
-                Text(sonuc),
+                Text(sonuc,style: TextStyle(color: Colors.red),),
                 SizedBox(
                   height: 10,
                 ),
