@@ -16,13 +16,16 @@ class _HomePageState extends State<HomePage> {
   void signOut() {
     FirebaseAuth.instance.signOut();
   }
-
+  
   void postText() {
     if(textController.text.length>5){
+  
+      String day_month_year = Timestamp.now().toDate().day.toString()+"/"+Timestamp.now().toDate().month.toString()+"/"+Timestamp.now().toDate().year.toString();
+
       FirebaseFirestore.instance.collection("UserPosts").add({
         'UserEmail': currentUser.email,
         'Message': textController.text,
-        'TimeStamp': Timestamp.now(),
+        'TimeStamp':day_month_year,
       }
       );
         textController.text = "";
@@ -30,6 +33,7 @@ class _HomePageState extends State<HomePage> {
   }
   final currentUser = FirebaseAuth.instance.currentUser!;
   final textController = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +69,7 @@ class _HomePageState extends State<HomePage> {
                         final post = snapshot.data!.docs[index];
 
                         return WallPost(
-                            message: post['Message'], user: post['UserEmail']);
+                            message: post['Message'], user: post['UserEmail'], color: Color.fromARGB(36, 255, 255, 255), anonimColor: Colors.red, time: post['TimeStamp'].toString(),);
                       });
                 } else if (snapshot.hasError) {
                   return Center(child: Text(snapshot.error.toString()));
@@ -94,7 +98,6 @@ class _HomePageState extends State<HomePage> {
             ),
 
             //logged in as
-            Text("email: " + currentUser.email!)
           ],
         ),
       ),
