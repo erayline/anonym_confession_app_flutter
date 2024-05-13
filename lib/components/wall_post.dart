@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class WallPost extends StatelessWidget {
   final String message;
@@ -21,7 +23,7 @@ class WallPost extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(color: color,borderRadius: BorderRadius.circular(6)),
           child: Padding(
-            padding: const EdgeInsets.all(15.0),
+            padding: const EdgeInsets.all(13.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,8 +35,18 @@ class WallPost extends StatelessWidget {
                     Text(time,style: TextStyle(color: const Color.fromARGB(130, 255, 255, 255)),),
                   ],
                 ),
-                SizedBox(height: 4,),
-                Text(message,style: TextStyle(color: Colors.white),softWrap: true,),
+                SizedBox(height: 10,),
+                
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Flexible(child: Text(message,style: TextStyle(color: Colors.white),softWrap: true,)),
+                    // GestureDetector(
+                    //   onTap: (){print('yoruma tıklandı');},
+                    //   child: Padding(padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
+                    //   child: Icon(Icons.comment,color: Colors.white60,)))
+                  ],
+                ),
               ],
             ),
           )
