@@ -41,10 +41,10 @@ class WallPost extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Flexible(child: Text(message,style: TextStyle(color: Colors.white),softWrap: true,)),
-                    // GestureDetector(
-                    //   onTap: (){print('yoruma tıklandı');},
-                    //   child: Padding(padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
-                    //   child: Icon(Icons.comment,color: Colors.white60,)))
+                    GestureDetector(
+                      onTap: (){print('yoruma tıklandı');},
+                      child: Padding(padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
+                      child: Icon(Icons.comment,color: Colors.white60,)))
                   ],
                 ),
               ],
@@ -55,3 +55,4 @@ class WallPost extends StatelessWidget {
     );
   }
 }
+ 
