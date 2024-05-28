@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 3, 2, 19),
         foregroundColor: Colors.white,
-        title: Text('Iphone 15x'),
+        title: Text('ISTUN'),
         actions: [
           //sign out
           IconButton(onPressed: signOut, icon: Icon(Icons.exit_to_app))
